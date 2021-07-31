@@ -27,7 +27,7 @@ class pegawai{
         return $this->result;
     }
     
-     // Method untuk mengambil semua data dari table Jenis L
+     // Method untuk mengambil semua data dari table Jenis Kelamin Laki laki
      function GetData_All_L (){
 
         // Membuat Object dari Class database
@@ -42,7 +42,7 @@ class pegawai{
         }
         return $this->result;
     }
-       // Method untuk mengambil semua data dari table Jenis L
+       // Method untuk mengambil semua data dari table status Menikah
        function GetData_All_SM (){
 
         // Membuat Object dari Class database
@@ -57,7 +57,7 @@ class pegawai{
         }
         return $this->result;
     }
-           // Method untuk mengambil semua data dari table Jenis L
+           // Method untuk mengambil semua data dari table status Belum Menikah
            function GetData_All_BM (){
 
             // Membuat Object dari Class database
@@ -72,7 +72,7 @@ class pegawai{
             }
             return $this->result;
         }
-            // Method untuk mengambil semua data dari table Jenis L
+            // Method untuk mengambil semua data dari usia diantara 20-30 tahun
             function GetData_All_DP1 (){
 
                 // Membuat Object dari Class database
@@ -87,7 +87,7 @@ class pegawai{
                 }
                 return $this->result;
             }
-         // Method untuk mengambil semua data dari table Jenis L
+         // Method untuk mengambil semua data dari umur 30-45 Tahun
          function GetData_All_DP2 (){
 
             // Membuat Object dari Class database
@@ -96,14 +96,13 @@ class pegawai{
             $this->con=$this->db->Connect();
     
             // perintah Get data
-            $this->query=mysqli_query($this->con,"SELECT *, YEAR(CURDATE()) - YEAR(tgl_lahir) AS age FROM general");
+            $this->query=mysqli_query($this->con,"SELECT * FROM general WHERE YEAR(CURDATE()) - YEAR(tgl_lahir) BETWEEN 30 and 45");
             while($this->data=mysqli_fetch_array($this->query)){
-                if (($this->data['age']>=30)&&($this->data['age']<=45)) {
-                    $this->result[]=$this->data;
-                }
+            $this->result[]=$this->data;
             }
             return $this->result;
         }
+        //lama Kerja 1-5 Tahun
         function GetData_All_DM1 (){
 
             // Membuat Object dari Class database
