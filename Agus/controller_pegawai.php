@@ -81,11 +81,9 @@ class pegawai{
                 $this->con=$this->db->Connect();
         
                 // perintah Get data
-                $this->query=mysqli_query($this->con,"SELECT *, YEAR(CURDATE()) - YEAR(tgl_lahir) AS age FROM general");
+                $this->query=mysqli_query($this->con,"SELECT * FROM general WHERE YEAR(CURDATE()) - YEAR(tgl_lahir) BETWEEN 20 and 30");
                 while($this->data=mysqli_fetch_array($this->query)){
-                    if (($this->data['age']>=20)&&($this->data['age']<=30)) {
-                        $this->result[]=$this->data;
-                    }
+                    $this->result[]=$this->data;
                 }
                 return $this->result;
             }
