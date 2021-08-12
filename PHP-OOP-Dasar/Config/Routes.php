@@ -3,7 +3,6 @@
   // Memanggil fungsi dari CSRF
   include('Csrf.php');
 
-
 include '../Controllers/Controller_Petugas.php';
  // Membuat Object dari Class pegawai
 $db = new Controller_Petugas();

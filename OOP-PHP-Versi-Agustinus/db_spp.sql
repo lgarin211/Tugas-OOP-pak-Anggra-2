@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Waktu pembuatan: 09 Agu 2021 pada 06.17
+-- Waktu pembuatan: 12 Agu 2021 pada 10.17
 -- Versi server: 10.4.13-MariaDB
 -- Versi PHP: 7.4.8
 
@@ -33,6 +33,13 @@ CREATE TABLE `Kelas` (
   `kompetensi_keahlian` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `Kelas`
+--
+
+INSERT INTO `Kelas` (`id_kelas`, `nama_kelas`, `kompetensi_keahlian`) VALUES
+(1, 'PPLG', 'RPL 2022');
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +56,13 @@ CREATE TABLE `pembayaran` (
   `id_spp` int(11) NOT NULL,
   `jumlah_bayar` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `pembayaran`
+--
+
+INSERT INTO `pembayaran` (`id_pembayaran`, `tgl_bayar`, `id_petugas`, `nisn`, `bulan_bayar`, `tahun_bayar`, `id_spp`, `jumlah_bayar`) VALUES
+(2, '2021-08-01', 15, '0039101371', 'january', '2021', 1, 100000);
 
 -- --------------------------------------------------------
 
@@ -69,8 +83,20 @@ CREATE TABLE `petugas` (
 --
 
 INSERT INTO `petugas` (`id_petugas`, `username`, `password`, `nama_petugas`, `level`) VALUES
-(1, 'lgarin211', '12345678', 'Agustinus', 'admin'),
-(2, 'lgarin211a', '12345678', 'Agustinus2', 'admin');
+(1, 'Ginda', '12345678', 'Alfito', 'admin'),
+(15, 'BSTM', '12345678', 'ginda bustomi v12', 'admin'),
+(16, 'lgarin211a', '12345678', 'Agustinus', 'petugas'),
+(17, 'lgarin211af', '123456781', 'Agustinus', 'petugas'),
+(18, 'lgarin211ae', '123456782', 'Agustinus', 'petugas'),
+(19, 'lgarin211ad', '123456783', 'Agustinus', 'petugas'),
+(20, 'lgarin211ac', '123456784', 'Agustinus', 'petugas'),
+(21, 'lgarin211ab', '123456785', 'Agustinus', 'petugas'),
+(22, 'lgarin211aa', '123456786', 'Agustinus', 'petugas'),
+(23, 'lgarin211', '12345678', 'ginda bb', 'admin'),
+(24, 'ginduy', '12345678', 'Agustinus23', 'admin'),
+(25, 'ginduy', '12345678', 'Agustinus23', 'admin'),
+(26, 'prakerin', '12345123213', 'ginda bustomi', 'petugas'),
+(27, 'prakerin', '12345123213', 'ginda bustomi', 'petugas');
 
 -- --------------------------------------------------------
 
@@ -88,6 +114,18 @@ CREATE TABLE `siswa` (
   `id_spp` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `siswa`
+--
+
+INSERT INTO `siswa` (`nisn`, `nis`, `nama`, `id_kelas`, `alamat`, `no_telp`, `id_spp`) VALUES
+('0039101371', '12312322', 'Agustinus Pardamean Luman Tobing3', 1, 'Tajur2', '08122172361', 1),
+('0039101372', '12312325', 'Agustinus Pardamean Luman Tobing', 1, 'Tajur', '08122172361', 1),
+('0039101373', '12312321', 'Agustinus Pardamean Luman Tobing4', 1, 'Tajur1', '08122172361', 1),
+('0039101374', '12312324', 'Agustinus Pardamean Luman Tobing1', 1, 'Tajur4', '08122172361', 1),
+('0039102712', '12312324', 'Agustinus Pardamean Luman Tobing1', 1, 'Tajur4', '08122172361', 1),
+('0039104742', '12312323', 'Agustinus Pardamean Luman Tobing2', 1, 'Tajur3', '08122172361', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -99,6 +137,13 @@ CREATE TABLE `spp` (
   `tahun` int(11) NOT NULL,
   `nominal` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `spp`
+--
+
+INSERT INTO `spp` (`id_spp`, `tahun`, `nominal`) VALUES
+(1, 2021, 2000000);
 
 --
 -- Indexes for dumped tables
@@ -147,25 +192,25 @@ ALTER TABLE `spp`
 -- AUTO_INCREMENT untuk tabel `Kelas`
 --
 ALTER TABLE `Kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_pembayaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `petugas`
 --
 ALTER TABLE `petugas`
-  MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_petugas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT untuk tabel `spp`
 --
 ALTER TABLE `spp`
-  MODIFY `id_spp` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_spp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
