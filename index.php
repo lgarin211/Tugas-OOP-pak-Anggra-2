@@ -45,11 +45,11 @@
             <div>
                 <h4 class="float-md-start mb-0">Pembayaran SPP</h4>
                 <nav class="nav nav-masthead justify-content-center float-md-end">
-                    <a href="view_siswa.php" class="nav-link">SISWA</a>
- 					<a href="view_kelas.php" class="nav-link">KELAS</a>
- 					<a href="view_petugas.php" class="nav-link">PETUGAS</a>
- 					<a href="view_spp.php" class="nav-link">SPP</a>
- 					<a href="view_pembayaran.php" class="nav-link">PEMBAYARAN</a>
+                    <a href="views/view_siswa.php" class="nav-link">SISWA</a>
+ 					<a href="views/view_kelas.php" class="nav-link">KELAS</a>
+ 					<a href="views/view_petugas.php" class="nav-link">PETUGAS</a>
+ 					<a href="views/view_spp.php" class="nav-link">SPP</a>
+ 					<a href="views/view_pembayaran.php" class="nav-link">PEMBAYARAN</a>
                 </nav>
             </div>
         </header>
