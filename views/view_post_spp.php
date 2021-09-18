@@ -15,7 +15,7 @@ include('../config/csrf.php');
 	<title>Pembayaran SPP</title>
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">
 	<!-- Bootstrap core CSS -->
-	<link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" >
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
 	<link rel="icon" href="https://getbootstrap.com/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -80,7 +80,7 @@ include('../config/csrf.php');
 						</tr>
 
 						<tr>
-							<td colspan="2" align="right"><input class="btn btn-primary type="submit" name="proses" value="create_spp"></td>
+							<td colspan="2" align="right"><input class="btn btn-primary" type="submit" name="proses" value="create_spp"></td>
 						</tr>
 
 					</form>

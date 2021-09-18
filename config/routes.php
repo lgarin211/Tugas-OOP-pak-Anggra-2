@@ -19,7 +19,7 @@ if ($function == "create_siswa") {
 	$db_siswa = new controller_siswa();
 
 	//validasi token csrf
-	// if (validation() == true) {
+	if (validation() == true) {
 		$db_siswa->POSTData(
 			$_POST['nisn'],
 			$_POST['nis'],
@@ -29,10 +29,11 @@ if ($function == "create_siswa") {
 			$_POST['no_telp'],
 			$_POST['id_spp']
 		);
-	// }
+		header("location:../views/view_siswa.php");
 
-	header("location:../views/view_siswa.php");
 	}
+
+		}
 
 	//decision variabel PUT_siswa
 	elseif ($function == "put_siswa") {
@@ -49,9 +50,9 @@ if ($function == "create_siswa") {
 			$_POST['no_telp'],
 			$_POST['id_spp'] 
 		);
-
-		}
 		header("location:../views/view_siswa.php");
+		}
+
 	}
 
 	//decision variabel delete_siswa
@@ -60,12 +61,12 @@ if ($function == "create_siswa") {
 		$nisn = base64_decode($_GET['nisn']);
 		$db_siswa->DELETEData($nisn);
 		header("location:../views/view_siswa.php");
-	}else{echo "error";}
+	}
 
 
 
 	//kelas
-	if ($function == "create_kelas") {
+	elseif ($function == "create_kelas") {
 	$db_kelas = new controller_kelas();
 	// validasi token csrf
 	if (validation() == true) {
@@ -74,9 +75,10 @@ if ($function == "create_siswa") {
 			$_POST['nama_kelas'],
 			$_POST['kompetensi_keahlian']
 		);
+		
+	header("location:../views/view_kelas.php");
 	}
 
-	header("location:../views/view_kelas.php");
 	}
 
 	//decision variabel PUT_kelas
@@ -90,9 +92,9 @@ if ($function == "create_siswa") {
 			$_POST['nama_kelas'],
 			$_POST['kompetensi_keahlian'] 
 		);
-
-		}
 		header("location:../views/view_kelas.php");
+		}
+
 	}
 
 	//decision variabel delete_kelas
@@ -101,23 +103,19 @@ if ($function == "create_siswa") {
 		$id_kelas = base64_decode($_GET['id_kelas']);
 		$db_kelas->DELETEData($id_kelas);
 		header("location:../views/view_kelas.php");
-	}else{echo "error";}
-
-	
-
-	//spp
-	if ($function == "create_spp") {
+	}elseif ($function == "create_spp") {
 	$db_spp = new controller_spp();
 	//validasi token csrf
-	// if (validation() == true) {
+	if (validation() == true) {
 		$db_spp->POSTData(
 			$_POST['id_spp'],
 			$_POST['tahun'],
 			$_POST['nominal']
 		);
-	// }
-
+		
 	header("location:../views/view_spp.php");
+
+	}
 	}
 
 	//decision variabel PUT_spp
@@ -125,15 +123,15 @@ if ($function == "create_siswa") {
 		
 		$db_spp = new controller_spp();
 		//validasi token csrf
-		// if (validation() == true) {
+		if (validation() == true) {
 			$db_spp->PUTData(
 			$_POST['id_spp'],
 			$_POST['tahun'],
 			$_POST['nominal'] 
 		);
-
-		// }
 		header("location:../views/view_spp.php");
+		}
+
 	}
 
 	//decision variabel delete_spp
@@ -142,16 +140,12 @@ if ($function == "create_siswa") {
 		$id_spp = base64_decode($_GET['id_spp']);
 		$db_spp->DELETEData($id_spp);
 		header("location:../views/view_spp.php");
-	}else{echo "error";}
-
-
-	//petugas
-	if ($function == "create_petugas") {
+	}elseif ($function == "create_petugas") {
 	
 	$db_petugas = new controller_petugas();
 
 	//validasi token csrf
-	// if (validation() == true) {
+	if (validation() == true) {
 		$db_petugas->POSTData(
 			$_POST['id_petugas'],
 			$_POST['username'],
@@ -159,9 +153,10 @@ if ($function == "create_siswa") {
 			$_POST['nama_petugas'],
 			$_POST['level']
 		);
-	// }
+		header("location:../views/view_petugas.php");
+	}
 
-	header("location:../views/view_petugas.php");
+
 	}
 
 	//decision variabel PUT_petugas
@@ -169,7 +164,7 @@ if ($function == "create_siswa") {
 
 		$db_petugas = new controller_petugas();
 		//validasi token csrf
-		// if (validation() == true) {
+		if (validation() == true) {
 			$db_petugas->PUTData(
 			$_POST['id_petugas'],
 			$_POST['username'],
@@ -177,9 +172,9 @@ if ($function == "create_siswa") {
 			$_POST['nama_petugas'],
 			$_POST['level']
 		);
-
-		// }
 		header("location:../views/view_petugas.php");
+		}
+
 	}
 
 	//decision variabel delete_petugas
@@ -188,17 +183,12 @@ if ($function == "create_siswa") {
 		$id_petugas = base64_decode($_GET['id_petugas']);
 		$db_petugas->DELETEData($id_petugas);
 		header("location:../views/view_petugas.php");
-	}else{echo "error";}
-
-
-
-	//pembayaran
-	if ($function == "create_pembayaran") {
+	}elseif ($function == "create_pembayaran") {
 	
 	$db_pembayaran = new controller_pembayaran();
 
 	//validasi token csrf
-	// if (validation() == true) {
+	if (validation() == true) {
 		$db_pembayaran->POSTData(
 			$_POST['id_pembayaran'],
 			$_POST['id_petugas'],
@@ -209,9 +199,9 @@ if ($function == "create_siswa") {
 			$_POST['id_spp'],
 			$_POST['jumlah_bayar']
 		);
-	// }
+		header("location:../views/view_pembayaran.php");
+	}
 
-	header("location:../views/view_pembayaran.php");
 	}
 
 	//decision variabel PUT_siswa
@@ -219,7 +209,7 @@ if ($function == "create_siswa") {
 
 		$db_pembayaran = new controller_pembayaran();
 		//validasi token csrf
-		// if (validation() == true) {
+		if (validation() == true) {
 			$db_pembayaran->PUTData(
 			$_POST['id_pembayaran'],
 			$_POST['id_petugas'],
@@ -230,9 +220,9 @@ if ($function == "create_siswa") {
 			$_POST['id_spp'],
 			$_POST['jumlah_bayar']
 		);
-
-		// }
 		header("location:../views/view_pembayaran.php");
+		}
+
 	}
 
 	//decision variabel delete_siswa

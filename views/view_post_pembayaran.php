@@ -15,7 +15,7 @@ include('../config/csrf.php');
 	<title>Pembayaran SPP</title>
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/cover/">
 	<!-- Bootstrap core CSS -->
-	<link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+	<link href="https://getbootstrap.com/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" >
 	<!-- Favicons -->
 	<link rel="apple-touch-icon" href="https://getbootstrap.com/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
 	<link rel="icon" href="https://getbootstrap.com/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
@@ -66,7 +66,7 @@ include('../config/csrf.php');
 						<input type="hidden" name="csrf_token" value="<?php echo CreateCSRF(); ?>">
 						<tr>
 							<td>ID PEMBAYARAN</td>
-							<td><input type="text" class="form-control" name="id_pembayaran"></td>
+							<td><input type="hidden" class="form-control" name="id_pembayaran"></td>
 						</tr>
 						<tr>
 							<td>ID PETUGAS</td>
@@ -79,22 +79,22 @@ include('../config/csrf.php');
 						</tr>
 						<tr>
 							<td>NISN</td>
-							<td><input type="text" class="form-control" name="nisn"></td>
+							<td><input type="number" class="form-control" name="nisn"></td>
 						</tr>
 
 						<tr>
 							<td>TANGGAL BAYAR</td>
-							<td><input type="text" class="form-control" name="tgl_bayar"></td>
+							<td><input type="number" class="form-control" name="tgl_bayar"></td>
 						</tr>
 
 						<tr>
 							<td>BULAN DIBAYAR</td>
-							<td><input type="text" class="form-control" name="bulan_dibayar"></td>
+							<td><input type="number" class="form-control" name="bulan_dibayar"></td>
 						</tr>
 
 						<tr>
 							<td>TAHUN DIBAYAR</td>
-							<td><input type="text" class="form-control" name="tahun_dibayar"></td>
+							<td><input type="number" class="form-control" name="tahun_dibayar"></td>
 						</tr>
 
 						<tr>
@@ -104,11 +104,11 @@ include('../config/csrf.php');
 
 						<tr>
 							<td>JUMLAH DIBAYAR</td>
-							<td><input type="text" class="form-control" name="jumlah_bayar"></td>
+							<td><input type="number" class="form-control" name="jumlah_bayar"></td>
 						</tr>
 
 						<tr>
-							<td colspan="2" align="right"><input class="btn btn-primary type="submit" name="proses" value="create_pembayaran"></td>
+							<td colspan="2" align="right"><input class="btn btn-primary" type="submit" name="proses" value="create_pembayaran"></td>
 						</tr>
 
 					</form>
