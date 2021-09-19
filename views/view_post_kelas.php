@@ -75,7 +75,8 @@ include('../config/csrf.php');
 						</tr>
 						<tr>
 							<td>KOMPETENSI KEAHLIAN</td>
-							<td><input type="text" class="form-control" name="kompetensi_keahlian"></td>
+							<td>
+								<input type="text" class="form-control" name="kompetensi_keahlian"></td>
 						</tr>
 						<tr>
 							<td colspan="2" align="right">

@@ -28,7 +28,7 @@ class Model_kelas{
 
 
 		//method memasukan data ke dalam table
-		function POST ($id_kelas=null,$nama_kelas,$kompetensi_keahlian)
+		function POST ($id_kelas,$nama_kelas,$kompetensi_keahlian)
 		{
 			
 			mysqli_query($this->con,"insert into kelas values(

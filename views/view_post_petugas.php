@@ -65,22 +65,22 @@ include('../config/csrf.php');
 				<table class="table table-hover table-dark">
 					<form action="../config/routes.php?function=create_petugas" method="POST">
 						<input type="hidden" name="csrf_token" value="<?php echo CreateCSRF(); ?>">
-						<tr>
+						<tr style="display: none;">
 							<td>ID PETUGAS</td>
-							<td><input type="text" class="form-control" name="id_petugas"></td>
+							<td><input type="hidden" class="form-control" name="id_petugas"></td>
 						</tr>
 						<tr>
 							<td>USERNAME</td>
-							<td><input type="text" class="form-control" name="username"></td>
+							<td><input type="text" required class="form-control" name="username"></td>
 						</tr>
 						<tr>
 							<td>PASSWORD</td>
-							<td><input type="text" class="form-control" name="password"></td>
+							<td><input type="password" required class="form-control" name="password"></td>
 						</tr>
 
 						<tr>
 							<td>NAMA PETUGAS</td>
-							<td><input type="text" class="form-control" name="nama_petugas"></td>
+							<td><input type="text" required class="form-control" name="nama_petugas"></td>
 						</tr>
 
 						<tr>

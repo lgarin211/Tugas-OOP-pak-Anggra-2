@@ -1,7 +1,9 @@
 <?php
 //memanggil fungsi CSRF
 include('../config/csrf.php');
-
+include '../controller/controller_kelas.php';
+$kelas = new controller_kelas();
+$GetKelas = $kelas->GetData_All();
 ?>
 <!doctype html>
 <html lang="en" class="h-100">
@@ -66,15 +68,15 @@ include('../config/csrf.php');
 						<input type="hidden" name="csrf_token" value="<?php echo CreateCSRF(); ?>">
 						<tr>
 							<td>NISN</td>
-							<td><input type="text" class="form-control" name="nisn"></td>
+							<td><input type="number" class="form-control" required name="nisn"></td>
 						</tr>
 						<tr>
 							<td>NIS</td>
-							<td><input type="text" class="form-control" name="nis"></td>
+							<td><input type="number" class="form-control" required name="nis"></td>
 						</tr>
 						<tr>
 							<td>nama</td>
-							<td><input type="text" class="form-control" name="nama"></td>
+							<td><input type="text" class="form-control" required name="nama"></td>
 						</tr>
 
 						<tr>
@@ -82,30 +84,29 @@ include('../config/csrf.php');
 							<td>
 								<select name="id_kelas" class="form-select">
 									<!-- logic combo get database-->
-
-
+									<?php foreach ($GetKelas as $key => $value) {
+										?>
+									<option value="<?=$value['id_kelas'];?>"><?=$value['nama_kelas'];?></option>
+										<?php
+									}?>
 									<!--logic combo get database-->
-
-
-									<option value="1">RPL</option>
-									<option value="2">TKJ</option>
 								</select>
 							</td>
 						</tr>
 
 						<tr>
 							<td>alamat</td>
-							<td><input type="text" class="form-control" name="alamat"></td>
+							<td><input type="text" class="form-control" required name="alamat"></td>
 						</tr>
 
 						<tr>
 							<td>NO TELEPON</td>
-							<td><input type="text" class="form-control" name="no_telp"></td>
+							<td><input type="number" class="form-control" required name="no_telp"></td>
 						</tr>
 
 						<tr>
 							<td>SPP</td>
-							<td><input type="text" class="form-control" name="id_spp"></td>
+							<td><input type="text" class="form-control" required value="1" name="id_spp"></td>
 						</tr>
 
 						<tr>

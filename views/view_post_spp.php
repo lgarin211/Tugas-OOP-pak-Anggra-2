@@ -72,11 +72,11 @@ include('../config/csrf.php');
 						</tr>
 						<tr>
 							<td>TAHUN</td>
-							<td><input type="text" class="form-control" name="tahun"></td>
+							<td><input type="date" class="form-control" required name="tahun"></td>
 						</tr>
 						<tr>
 							<td>NOMINAL</td>
-							<td><input type="text" class="form-control" name="nominal"></td>
+							<td><input type="number" class="form-control" required name="nominal"></td>
 						</tr>
 
 						<tr>

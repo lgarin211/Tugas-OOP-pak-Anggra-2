@@ -31,14 +31,14 @@ class Model_petugas{
 		//method memasukan data ke dalam table
 		function POST ($id_petugas=null,$username,$password,$nama_petugas,$level)
 		{
-			
-			mysqli_query($this->con,"insert into petugas values(
+			$dfa=mysqli_query($this->con,"insert into petugas values(
 				'".$id_petugas."',
 				'".$username."',
 				'".$password."',
 				'".$nama_petugas."',
 				'".$level."'
 				)");
+			var_dump($dfa);die;
 		}
 
 

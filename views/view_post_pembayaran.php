@@ -1,6 +1,10 @@
 <?php
 //memanggil fungsi CSRF
 include('../config/csrf.php');
+include '../controller/controller_petugas.php';
+// membuat objek dari class petugas
+$petugas = new controller_petugas();
+$GetPetugas = $petugas->GetData_All();
 
 ?>
 <!doctype html>
@@ -66,35 +70,40 @@ include('../config/csrf.php');
 						<input type="hidden" name="csrf_token" value="<?php echo CreateCSRF(); ?>">
 						<tr>
 							<td>ID PEMBAYARAN</td>
-							<td><input type="hidden" class="form-control" name="id_pembayaran"></td>
+							<td>
+								<input type="hidden" class="form-control" name="id_pembayaran">
+							</td>
 						</tr>
 						<tr>
 							<td>ID PETUGAS</td>
 							<td>
-								<select name="id_petugas">
-									<option value="1">RIZKI</option>
-									<option value="3">GATAU</option>
+								<select name="id_petugas" class="form-select">
+									<?php foreach ($GetPetugas as $key => $value) {
+										?>
+									<option value="<?=$value['id_petugas'];?>"><?=$value['username'];?></option>
+										<?php
+									}?>
 								</select>
 							</td>
 						</tr>
 						<tr>
 							<td>NISN</td>
-							<td><input type="number" class="form-control" name="nisn"></td>
+							<td><input type="number" class="form-control" required name="nisn"></td>
 						</tr>
 
 						<tr>
 							<td>TANGGAL BAYAR</td>
-							<td><input type="number" class="form-control" name="tgl_bayar"></td>
+							<td><input type="date" class="form-control" required name="tgl_bayar"></td>
 						</tr>
 
 						<tr>
 							<td>BULAN DIBAYAR</td>
-							<td><input type="number" class="form-control" name="bulan_dibayar"></td>
+							<td><input type="number" class="form-control" required name="bulan_dibayar"></td>
 						</tr>
 
 						<tr>
 							<td>TAHUN DIBAYAR</td>
-							<td><input type="number" class="form-control" name="tahun_dibayar"></td>
+							<td><input type="number" class="form-control" required name="tahun_dibayar"></td>
 						</tr>
 
 						<tr>
@@ -104,7 +113,7 @@ include('../config/csrf.php');
 
 						<tr>
 							<td>JUMLAH DIBAYAR</td>
-							<td><input type="number" class="form-control" name="jumlah_bayar"></td>
+							<td><input type="number" class="form-control" required name="jumlah_bayar"></td>
 						</tr>
 
 						<tr>
