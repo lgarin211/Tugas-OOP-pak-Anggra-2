@@ -33,7 +33,7 @@ class Model_pembayaran{
 
 
 		//method memasukan data ke dalam table
-		function POST ($id_pembayaran,$id_petugas,$nisn,$tgl_bayar,$bulan_dibayar,$tahun_dibayar,$id_spp, $jumlah_bayar)
+		function POST ($id_pembayaran=null,$id_petugas,$nisn,$tgl_bayar,$bulan_dibayar,$tahun_dibayar,$id_spp, $jumlah_bayar)
 		{
 			
 			mysqli_query($this->con,"insert into pembayaran values(

@@ -25,12 +25,9 @@ class Model_spp{
 			$this->con = $this->db->connect();
 		}
 
-
-
 		//method memasukan data ke dalam table
-		function POST ($id_spp,$tahun,$nominal)
+		function POST ($id_spp=null,$tahun,$nominal)
 		{
-			
 			mysqli_query($this->con,"insert into spp values(
 				'".$id_spp."',
 				'".$tahun."',

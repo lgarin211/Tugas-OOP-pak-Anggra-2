@@ -29,7 +29,7 @@ class Model_petugas{
 
 
 		//method memasukan data ke dalam table
-		function POST ($id_petugas,$username,$password,$nama_petugas,$level)
+		function POST ($id_petugas=null,$username,$password,$nama_petugas,$level)
 		{
 			
 			mysqli_query($this->con,"insert into petugas values(
