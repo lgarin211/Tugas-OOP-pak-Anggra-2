@@ -1,12 +1,6 @@
-<?php
-//memanggil fungsi CSRF
-include('../config/csrf.php');
-
-?>
 
 <!doctype html>
 <html lang="en" class="h-100">
-
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,7 +41,7 @@ include('../config/csrf.php');
 
 <body class="d-flex h-100 text-center text-white bg-dark">
 	<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-	<header class="mb-auto">
+		<header class="mb-auto">
 			<div>
 				<h4 class="float-md-start mb-0">Pembayaran SPP</h4>
 				<nav class="nav nav-masthead justify-content-center float-md-end">
@@ -59,55 +53,57 @@ include('../config/csrf.php');
 				</nav>
 			</div>
 		</header>
-
 		<main class="px-3">
-			<div class="mr-4 text-center">
-				<table class="table table-hover table-dark">
-					<form action="../config/routes.php?function=create_petugas" method="POST">
-						<input type="hidden" name="csrf_token" value="<?php echo CreateCSRF(); ?>">
-						<tr style="display: none;">
-							<td>ID PETUGAS</td>
-							<td><input type="hidden" class="form-control" name="id_petugas"></td>
-						</tr>
-						<tr>
-							<td>USERNAME</td>
-							<td><input type="text" required class="form-control" name="username"></td>
-						</tr>
-						<tr>
-							<td>PASSWORD</td>
-							<td><input type="password" required class="form-control" name="password"></td>
-						</tr>
+                <?php
+                if (isset($_GET['menu'])) {
+                    $id = base64_decode($_GET['menu']);
+                } else {
+                    $id="";
+                }
+                    
+                    if ($id==1) {
+                        include('view_kelas.php');
+                    } elseif ($id==2) {
+                        include('view_siswa.php');
+                    } elseif ($id==3) {
+                        include('view_petugas.php');
+                    } elseif ($id==4) {
+                        include('view_spp.php');
+                    } elseif ($id==5) {
+                        include('view_pembayaran.php');
+                    } 
+                    // elseif ($id==6) {
+                    //     include('view_post_kelas.php');
+                    // } elseif ($id==7) {
+                    //     include('view_put_kelas.php');
+                    // } elseif ($id==8) {
+                    //     include('view_post_siswa.php');
+                    // } elseif ($id==9) {
+                    //     include('view_put_siswa.php');
+                    // } elseif ($id==10) {
+                    //     include('view_post_petugas.php');
+                    // } elseif ($id==11) {
+                    //     include('view_put_petugas.php');
+                    // } elseif ($id==12) {
+                    //     include('view_post_spp.php');
+                    // } elseif ($id==13) {
+                    //     include('view_put_spp.php');
+                    // } elseif ($id==14) {
+                    //     include('view_post_pembayaran.php');
+                    // } elseif ($id==15) {
+                    //     include('view_put_pembayaran.php');
+                    // } 
+                    else {
+                        echo "Selamat Datang Di Pembayaran SPP";
+                    }
+                ?>
+	</main>
 
-						<tr>
-							<td>NAMA PETUGAS</td>
-							<td><input type="text" required class="form-control" name="nama_petugas"></td>
-						</tr>
-
-						<tr>
-							<td>LEVEL</td>
-							<td>
-								<select name="level" class="form-select">
-									<option value="administrator">ADMINISTRATOR</option>
-									<option value="petugas">PETUGAS</option>
-								</select>
-							</td>
-						</tr>
-
-						<tr>
-							<td colspan="2" align="right"><input class="btn btn-primary" type="submit" name="proses" value="create_petugas"></td>
-						</tr>
-					</form>
-				</table>
-			</div>
-		</main>
-
-		<footer class="mt-auto text-white-50">
-			<p>@agustinus.</p>
-		</footer>
-	</div>
-
-
+    <footer class="mt-auto text-white-50">
+        <p>@agustinus.</p>
+    </footer>
+    </div>
 
 </body>
 
-</html>I
+</html>

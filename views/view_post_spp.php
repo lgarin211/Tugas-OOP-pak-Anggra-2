@@ -46,15 +46,15 @@ include('../config/csrf.php');
 
 <body class="d-flex h-100 text-center text-white bg-dark">
 	<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-		<header class="mb-auto">
+	<header class="mb-auto">
 			<div>
 				<h4 class="float-md-start mb-0">Pembayaran SPP</h4>
 				<nav class="nav nav-masthead justify-content-center float-md-end">
-					<a href="view_siswa.php" class="nav-link">SISWA</a>
-					<a href="view_kelas.php" class="nav-link">KELAS</a>
-					<a href="view_petugas.php" class="nav-link">PETUGAS</a>
-					<a href="view_spp.php" class="nav-link">SPP</a>
-					<a href="view_pembayaran.php" class="nav-link">PEMBAYARAN</a>
+					<a href="main.php?menu=<?php echo base64_encode(2) ?>" class="nav-link">SISWA</a>
+					<a href="main.php?menu=<?php echo base64_encode(1) ?>" class="nav-link">KELAS</a>
+					<a href="main.php?menu=<?php echo base64_encode(3) ?>" class="nav-link">PETUGAS</a>
+					<a href="main.php?menu=<?php echo base64_encode(4) ?>" class="nav-link">SPP</a>
+					<a href="main.php?menu=<?php echo base64_encode(5) ?>" class="nav-link">PEMBAYARAN</a>
 				</nav>
 			</div>
 		</header>

@@ -27,7 +27,7 @@ if ($function == "create_siswa") {
             $_POST['no_telp'],
             $_POST['id_spp']
         );
-        header("location:../views/view_siswa.php");
+        header("location:../views/main.php");
     }
 
 }
@@ -46,7 +46,7 @@ elseif ($function == "put_siswa") {
             $_POST['no_telp'],
             $_POST['id_spp']
         );
-        header("location:../views/view_siswa.php");
+        header("location:../views/main.php");
     }
 
 }
@@ -56,7 +56,7 @@ elseif ($function == "delete_siswa") {
     $db_siswa = new controller_siswa();
     $nisn = base64_decode($_GET['nisn']);
     $db_siswa->DELETEData($nisn);
-    header("location:../views/view_siswa.php");
+    header("location:../views/main.php");
 }
 //kelas
 elseif ($function == "create_kelas") {
@@ -69,7 +69,7 @@ elseif ($function == "create_kelas") {
             $_POST['kompetensi_keahlian']
         );
 
-        header("location:../views/view_kelas.php");
+        header("location:../views/main.php");
     }
 
 }
@@ -83,7 +83,7 @@ elseif ($function == "put_kelas") {
             $_POST['nama_kelas'],
             $_POST['kompetensi_keahlian']
         );
-        header("location:../views/view_kelas.php");
+        header("location:../views/main.php");
     }
 
 }
@@ -92,7 +92,7 @@ elseif ($function == "delete_kelas") {
     $db_kelas = new controller_kelas();
     $id_kelas = base64_decode($_GET['id_kelas']);
     $db_kelas->DELETEData($id_kelas);
-    header("location:../views/view_kelas.php");
+    header("location:../views/main.php");
 } 
 elseif ($function == "create_spp") {
     $db_spp = new controller_spp();
@@ -104,7 +104,7 @@ elseif ($function == "create_spp") {
             $_POST['nominal']
         );
 
-        header("location:../views/view_spp.php");
+        header("location:../views/main.php");
 
     }
 }
@@ -119,7 +119,7 @@ elseif ($function == "put_spp") {
             $_POST['tahun'],
             $_POST['nominal']
         );
-        header("location:../views/view_spp.php");
+        header("location:../views/main.php");
     }
 
 }
@@ -128,7 +128,7 @@ elseif ($function == "delete_spp") {
     $db_spp = new controller_spp();
     $id_spp = base64_decode($_GET['id_spp']);
     $db_spp->DELETEData($id_spp);
-    header("location:../views/view_spp.php");
+    header("location:../views/main.php");
 } 
 elseif ($function == "create_petugas") {
    $db_petugas = new controller_petugas();
@@ -142,7 +142,7 @@ elseif ($function == "create_petugas") {
             $_POST['nama_petugas'],
             $_POST['level']
         );
-        header("location:../views/view_petugas.php");
+        header("location:../views/main.php");
     }
 
 }
@@ -158,7 +158,7 @@ elseif ($function == "put_petugas") {
             $_POST['nama_petugas'],
             $_POST['level']
         );
-        header("location:../views/view_petugas.php");
+        header("location:../views/main.php");
     }
 
 }
@@ -167,7 +167,7 @@ elseif ($function == "delete_petugas") {
     $db_petugas = new controller_petugas();
     $id_petugas = base64_decode($_GET['id_petugas']);
     $db_petugas->DELETEData($id_petugas);
-    header("location:../views/view_petugas.php");
+    header("location:../views/main.php");
 } 
 elseif ($function == "create_pembayaran") {
 
@@ -185,7 +185,7 @@ elseif ($function == "create_pembayaran") {
             $_POST['id_spp'],
             $_POST['jumlah_bayar']
         );
-        header("location:../views/view_pembayaran.php");
+        header("location:../views/main.php");
     }
 
 }
@@ -205,7 +205,7 @@ elseif ($function == "put_pembayaran") {
             $_POST['id_spp'],
             $_POST['jumlah_bayar']
         );
-        header("location:../views/view_pembayaran.php");
+        header("location:../views/main.php");
     }
 
 }
@@ -214,6 +214,6 @@ elseif ($function == "delete_pembayaran") {
     $db_pembayaran = new controller_pembayaran();
     $id_pembayaran = base64_decode($_GET['id_pembayaran']);
     $db_pembayaran->DELETEData($id_pembayaran);
-    header("location:../views/view_pembayaran.php");
+    header("location:../views/main.php");
 } 
 else {echo "Harap Masukan Methed GET akses yang benar";}
